@@ -1,8 +1,10 @@
-from gpiozero import LED
-from time import sleep
+from gpiozero import LED  # gpiozero 라이브러리에서 LED 제어 클래스 불러오기
+from time import sleep    # time 모듈에서 시간 대기(sleep) 함수 불러오기
 
+# BCM 번호 기준 GPIO 17번 핀에 연결된 LED 객체 생성
 led = LED(17)        # BCM GPIO17
-led.on()
-sleep(2)
-led.off()
-led.close()
+
+led.on()             # LED 켜기 (GPIO 17번 핀에 HIGH/1 신호 출력)
+sleep(2)             # 2초 동안 대기
+led.off()            # LED 끄기 (GPIO 17번 핀에 LOW/0 신호 출력)
+led.close()          # 사용이 끝난 GPIO 핀 자원 해제
